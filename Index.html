@@ -32,15 +32,36 @@
         }
 
         .logo {
-            width: 80px;
-            height: 48px;
             margin-right: 40px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .logo svg {
-            width: 100%;
-            height: 100%;
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.4);
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 50%, #0080ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Arial Black', sans-serif;
         }
 
         .nav-menu {
@@ -89,6 +110,123 @@
             width: 20px;
             height: 20px;
             fill: currentColor;
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            margin-left: auto;
+            margin-right: 20px;
+        }
+
+        .search-bar {
+            width: 0;
+            padding: 10px 40px 10px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            color: white;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .search-bar.active {
+            width: 280px;
+        }
+
+        .search-bar::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-bar:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .search-icon-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-results-container {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(26, 29, 41, 0.98);
+            border-radius: 12px;
+            max-height: 70vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            display: none;
+            z-index: 100;
+        }
+
+        .search-results-container.active {
+            display: block;
+        }
+
+        .search-result-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .search-result-poster {
+            width: 60px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .search-result-info {
+            flex: 1;
+        }
+
+        .search-result-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .search-result-meta {
+            font-size: 12px;
+            color: #c4c4c4;
+            margin-bottom: 8px;
+        }
+
+        .search-result-desc {
+            font-size: 13px;
+            color: #999;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .no-results {
+            padding: 40px;
+            text-align: center;
+            color: #999;
         }
 
         /* Page Container */
@@ -142,27 +280,27 @@
         }
 
         .slide.soul {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7F51FA9F6CBD9F0C9B1394EB459D6F84C451FFDA61ED3D32A8F215319D1C94E7/scale?width=1440&aspectRatio=1.78&format=jpeg');
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1440&h=810&fit=crop');
         }
 
         .slide:nth-child(2) {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4B32D8CB7C0C358E9FF348FB0338AD13AB4EE7D9FF493856616385B2847DF8CB/scale?width=1440&aspectRatio=1.78&format=jpeg');
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1440&h=810&fit=crop');
         }
 
         .slide.infinitywar {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/341AE85B6C1423B9CEECDCC1C7B5DC394B6156299D8C0989AD88A5BB1155F67F/scale?width=1440&aspectRatio=1.78&format=jpeg');
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1440&h=810&fit=crop');
         }
 
         .slide.x-men {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/56B2B5B0F21A4106ED4C75E861582B2378956E525D1E52CA735825F7D31B67ED/scale?width=1440&aspectRatio=1.78&format=jpeg');
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1440&h=810&fit=crop');
         }
 
         .slide.frozen2 {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E0D5EDBD8BF8A3FF79DF1869E1A9658EE582B0868C0B8BDA55319C96C71D3E18/scale?width=1440&aspectRatio=1.78&format=jpeg');
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=1440&h=810&fit=crop');
         }
 
         .slide.hiddenfigures {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2B04F18C4DD9D405C0ACBF988DC5D3FC6F7E223573FAAB054F2A832EA7FC85D3/scale?width=1440&aspectRatio=1.78&format=jpeg');
+            background-image: linear-gradient(to right, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1440&h=810&fit=crop');
         }
 
         .slider-arrow {
@@ -615,6 +753,125 @@
             font-weight: 500;
         }
 
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, #040714 0%, #0a0e1a 100%);
+            padding: 60px 40px 30px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #1e90ff 0%, #00d4ff 50%, #0080ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .footer-description {
+            color: #c4c4c4;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, #1e90ff, #00d4ff);
+            transform: translateY(-3px);
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-link {
+            color: #c4c4c4;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #1e90ff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-legal a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-legal a:hover {
+            color: #1e90ff;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav {
@@ -622,7 +879,7 @@
             }
 
             .logo {
-                width: 60px;
+                font-size: 24px;
                 margin-right: 20px;
             }
 
@@ -638,6 +895,10 @@
             .nav-icon {
                 width: 18px;
                 height: 18px;
+            }
+
+            .search-bar.active {
+                width: 200px;
             }
 
             .popup-content {
@@ -661,6 +922,22 @@
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 padding: 0 20px 40px;
             }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -668,10 +945,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="logo" onclick="showPage('home')">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 34">
-                <path fill="#fff" d="M24.6 4.3c-.8.5-1.5 1.1-2 1.8-.4.6-.8 1.3-1 2-.3 1.1-.4 2.2-.4 3.4v17.2c0 1.2.1 2.3.4 3.4.2.7.6 1.4 1 2 .5.7 1.2 1.3 2 1.8.8.5 1.7.8 2.6 1l-.3-1.6c-.5-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.3-.2-.5-.4-1.1-.4-1.7V11.5c0-.6.1-1.2.4-1.7.2-.5.5-.9.9-1.3.4-.4.9-.7 1.4-.9l.3-1.6c-.9.2-1.8.5-2.6 1zm18.9 0c.8.5 1.5 1.1 2 1.8.4.6.8 1.3 1 2 .3 1.1.4 2.2.4 3.4v17.2c0 1.2-.1 2.3-.4 3.4-.2.7-.6 1.4-1 2-.5.7-1.2 1.3-2 1.8-.8.5-1.7.8-2.6 1l.3-1.6c.5-.2 1-.5 1.4-.9.4-.4.7-.8.9-1.3.2-.5.4-1.1.4-1.7V11.5c0-.6-.1-1.2-.4-1.7-.2-.5-.5-.9-.9-1.3-.4-.4-.9-.7-1.4-.9l-.3-1.6c.9.2 1.8.5 2.6 1z"/>
-                <path fill="#fff" d="M13.9 2.5c-.6 0-1.1.1-1.6.3-.5.2-.9.5-1.2.9-.3.4-.6.8-.7 1.3-.2.5-.2 1-.2 1.5v21.4c0 .5.1 1 .2 1.5.2.5.4.9.7 1.3.3.4.7.7 1.2.9.5.2 1 .3 1.6.3.6 0 1.1-.1 1.6-.3.5-.2.9-.5 1.2-.9.3-.4.6-.8.7-1.3.2-.5.2-1 .2-1.5V6.5c0-.5-.1-1-.2-1.5-.2-.5-.4-.9-.7-1.3-.3-.4-.7-.7-1.2-.9-.5-.2-1-.3-1.6-.3zm21.2 0c-.6 0-1.1.1-1.6.3-.5.2-.9.5-1.2.9-.3.4-.6.8-.7 1.3-.2.5-.2 1-.2 1.5v21.4c0 .5.1 1 .2 1.5.2.5.4.9.7 1.3.3.4.7.7 1.2.9.5.2 1 .3 1.6.3.6 0 1.1-.1 1.6-.3.5-.2.9-.5 1.2-.9.3-.4.6-.8.7-1.3.2-.5.2-1 .2-1.5V6.5c0-.5-.1-1-.2-1.5-.2-.5-.4-.9-.7-1.3-.3-.4-.7-.7-1.2-.9-.5-.2-1-.3-1.6-.3z"/>
-            </svg>
+            STREAMFLIX
         </div>
         <div class="nav-menu">
             <div class="nav-item" onclick="showPage('home')">
@@ -679,18 +953,6 @@
                     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                 </svg>
                 <span>HOME</span>
-            </div>
-            <div class="nav-item">
-                <svg class="nav-icon" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                </svg>
-                <span>SEARCH</span>
-            </div>
-            <div class="nav-item" onclick="showPage('watchlist')">
-                <svg class="nav-icon" viewBox="0 0 24 24">
-                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                </svg>
-                <span>WATCHLIST</span>
             </div>
             <div class="nav-item" onclick="showPage('movies')">
                 <svg class="nav-icon" viewBox="0 0 24 24">
@@ -704,6 +966,21 @@
                 </svg>
                 <span>SERIES</span>
             </div>
+            <div class="nav-item" onclick="showPage('watchlist')">
+                <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                </svg>
+                <span>WATCHLIST</span>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-bar" id="searchInput" placeholder="Search movies & series...">
+            <button class="search-icon-btn" onclick="toggleSearch()">
+                <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+            <div class="search-results-container" id="searchResults"></div>
         </div>
     </nav>
 
@@ -845,60 +1122,114 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">STREAMFLIX</div>
+                    <p class="footer-description">
+                        Your ultimate destination for streaming the best movies and TV series. 
+                        Unlimited entertainment, anytime, anywhere.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">𝕏</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="#" class="social-icon">▶</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#" class="footer-link">Press</a>
+                    <a href="#" class="footer-link">Blog</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                    <a href="#" class="footer-link">Account</a>
+                    <a href="#" class="footer-link">Redeem Gift</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Cookie Settings</a>
+                    <a href="#" class="footer-link">Sitemap</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>&copy; 2025 StreamFlix. All rights reserved.</div>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Movie Data
         const moviesData = {
     recommended: [
-        {title: 'Moana', poster: 'https://image.tmdb.org/t/p/w500/z5Hedu7IxCIn3NGZ8sC1QX1T3DM.jpg', desc: 'An adventurous teenager sails out on a daring mission to save her people. During her journey, Moana meets the once-mighty demigod Maui.', rating: '7.6/10', genre: 'Animation, Adventure', year: '2016', watch: 'https://www.youtube.com/watch?v=LKFuXETZUsI', wiki: 'Moana_(2016_film)'},
-        {title: 'Frozen', poster: 'https://image.tmdb.org/t/p/w500/kgwjIb2JDHRhNk13lmSxiCLxjSd.jpg', desc: 'When the newly crowned Queen Elsa accidentally uses her power to turn things into ice, her sister Anna teams up with a mountain man to find her.', rating: '7.4/10', genre: 'Animation, Adventure', year: '2013', watch: 'https://www.youtube.com/watch?v=L0MK7qz13bU', wiki: 'Frozen_(2013_film)'},
-        {title: 'Encanto', poster: 'https://image.tmdb.org/t/p/w500/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg', desc: 'An extraordinary family living in the mountains of Colombia. Mirabel is the only member without magical powers.', rating: '7.2/10', genre: 'Animation, Comedy', year: '2021', watch: 'https://www.youtube.com/watch?v=CaimKeDcudo', wiki: 'Encanto'},
-        {title: 'Soul', poster: 'https://image.tmdb.org/t/p/w500/hm58Jw4Lw2fNgfC7k1H0dG9g2JU.jpg', desc: 'A middle-school band teacher gets the chance of a lifetime when his passion for jazz leads him to a once-in-a-lifetime opportunity.', rating: '8.0/10', genre: 'Animation, Drama', year: '2020', watch: 'https://www.youtube.com/watch?v=xOsLIiBStEs', wiki: 'Soul_(2020_film)'},
-        {title: 'Raya and the Last Dragon', poster: 'https://image.tmdb.org/t/p/w500/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg', desc: 'In the fantasy world of Kumandra, a warrior named Raya seeks the last dragon to save her divided land.', rating: '7.3/10', genre: 'Animation, Action', year: '2021', watch: 'https://www.youtube.com/watch?v=1VIZ89FEjYI', wiki: 'Raya_and_the_Last_Dragon'},
-        {title: 'Turning Red', poster: 'https://image.tmdb.org/t/p/w500/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg', desc: 'A 13-year-old girl turns into a giant red panda whenever she gets too excited.', rating: '7.0/10', genre: 'Animation, Comedy', year: '2022', watch: 'https://www.youtube.com/watch?v=XdKzUbAiswE', wiki: 'Turning_Red'}
+        {title: 'Moana', poster: 'https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_SX300.jpg', desc: 'An adventurous teenager sails out on a daring mission to save her people. During her journey, Moana meets the once-mighty demigod Maui.', rating: '7.6/10', genre: 'Animation, Adventure', year: '2016', watch: 'https://www.youtube.com/watch?v=LKFuXETZUsI', wiki: 'Moana_(2016_film)'},
+        {title: 'Frozen', poster: 'https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg', desc: 'When the newly crowned Queen Elsa accidentally uses her power to turn things into ice, her sister Anna teams up with a mountain man to find her.', rating: '7.4/10', genre: 'Animation, Adventure', year: '2013', watch: 'https://www.youtube.com/watch?v=L0MK7qz13bU', wiki: 'Frozen_(2013_film)'},
+        {title: 'Encanto', poster: 'https://m.media-amazon.com/images/M/MV5BNjE5NzA4ZDctOTJkZi00NzM0LTkwOTYtMDI4MmNkMzIxODhkXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg', desc: 'An extraordinary family living in the mountains of Colombia. Mirabel is the only member without magical powers.', rating: '7.2/10', genre: 'Animation, Comedy', year: '2021', watch: 'https://www.youtube.com/watch?v=CaimKeDcudo', wiki: 'Encanto'},
+        {title: 'Soul', poster: 'https://m.media-amazon.com/images/M/MV5BZGE1MDg5M2MtNTkyZS00MTY5LTg1YzUtZTlhZmM1Y2EwNmFmXkEyXkFqcGdeQXVyNjA3OTI0MDc@._V1_SX300.jpg', desc: 'A middle-school band teacher gets the chance of a lifetime when his passion for jazz leads him to a once-in-a-lifetime opportunity.', rating: '8.0/10', genre: 'Animation, Drama', year: '2020', watch: 'https://www.youtube.com/watch?v=xOsLIiBStEs', wiki: 'Soul_(2020_film)'},
+        {title: 'Raya and the Last Dragon', poster: 'https://m.media-amazon.com/images/M/MV5BZWNiOTc4NGItNGY4YS00ZGNkLThkOWEtMDE4Mzk3NjYyMzQ1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg', desc: 'In the fantasy world of Kumandra, a warrior named Raya seeks the last dragon to save her divided land.', rating: '7.3/10', genre: 'Animation, Action', year: '2021', watch: 'https://www.youtube.com/watch?v=1VIZ89FEjYI', wiki: 'Raya_and_the_Last_Dragon'},
+        {title: 'Turning Red', poster: 'https://m.media-amazon.com/images/M/MV5BNmI2NTY5MjUtN2I2Yi00YjQzLTk2NGEtODhhMDFlZDNlZTM5XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg', desc: 'A 13-year-old girl turns into a giant red panda whenever she gets too excited.', rating: '7.0/10', genre: 'Animation, Comedy', year: '2022', watch: 'https://www.youtube.com/watch?v=XdKzUbAiswE', wiki: 'Turning_Red'}
     ],
 
     watched: [
-        {title: 'Camp Rock', poster: 'https://image.tmdb.org/t/p/w500/tenqCwCcIQPOcOFwYWihPXpMvOe.jpg', desc: 'A teen discovers her dream to become a singer at a prestigious performing arts camp.', rating: '5.0/10', genre: 'Musical, Romance', year: '2008', watch: 'https://www.youtube.com/watch?v=XKuUrSW8l8s', wiki: 'Camp_Rock'},
-        {title: 'Teen Beach Movie', poster: 'https://image.tmdb.org/t/p/w500/ssYpZQvUtVqNRnoTnNTqTfxkxkt.jpg', desc: 'Two surfers find themselves magically transported into a classic beach party movie.', rating: '5.9/10', genre: 'Musical, Comedy', year: '2013', watch: 'https://www.youtube.com/watch?v=UkL4T7nhfYE', wiki: 'Teen_Beach_Movie'},
-        {title: 'Lemonade Mouth', poster: 'https://image.tmdb.org/t/p/w500/lHUkVf6cmbw7U9CdcLYaYWQppGu.jpg', desc: 'Five students meet in detention and form a rock band to stand up for their beliefs.', rating: '6.9/10', genre: 'Musical, Drama', year: '2011', watch: 'https://www.youtube.com/watch?v=wvzzf4kBBhA', wiki: 'Lemonade_Mouth'},
-        {title: 'The Cheetah Girls', poster: 'https://image.tmdb.org/t/p/w500/4aTLo8xuQSeZzGBXYvzFwuAJR2G.jpg', desc: 'Four NYC girls pursue their dreams of becoming singing superstars.', rating: '4.9/10', genre: 'Musical, Comedy', year: '2003', watch: 'https://www.youtube.com/watch?v=RXt_lrama4w', wiki: 'The_Cheetah_Girls_(film)'},
-        {title: 'Descendants', poster: 'https://image.tmdb.org/t/p/w500/5FGleUA2n4l0MM2XJzh3hgGcQom.jpg', desc: 'Teenage children of Disney villains are given a chance to prove they can be good.', rating: '6.3/10', genre: 'Musical, Fantasy', year: '2015', watch: 'https://www.youtube.com/watch?v=rKn7NYp11vo', wiki: 'Descendants_(2015_film)'},
-        {title: 'Zombies', poster: 'https://image.tmdb.org/t/p/w500/nheBZ7K5OuKB1oxj8mRFZxYzfAz.jpg', desc: 'Students from Zombietown transfer to a suburban high school.', rating: '6.0/10', genre: 'Musical, Comedy', year: '2018', watch: 'https://www.youtube.com/watch?v=wuvh3ZXChTY', wiki: 'Zombies_(2018_film)'}
+        {title: 'Camp Rock', poster: 'https://m.media-amazon.com/images/M/MV5BMTM1NTQ1NDE2N15BMl5BanBnXkFtZTcwOTY0MjgzMg@@._V1_SX300.jpg', desc: 'A teen discovers her dream to become a singer at a prestigious performing arts camp.', rating: '5.0/10', genre: 'Musical, Romance', year: '2008', watch: 'https://www.youtube.com/watch?v=XKuUrSW8l8s', wiki: 'Camp_Rock'},
+        {title: 'Teen Beach Movie', poster: 'https://m.media-amazon.com/images/M/MV5BMjE3MTg1NTg1N15BMl5BanBnXkFtZTcwMDAyMjYzOQ@@._V1_SX300.jpg', desc: 'Two surfers find themselves magically transported into a classic beach party movie.', rating: '5.9/10', genre: 'Musical, Comedy', year: '2013', watch: 'https://www.youtube.com/watch?v=UkL4T7nhfYE', wiki: 'Teen_Beach_Movie'},
+        {title: 'Lemonade Mouth', poster: 'https://m.media-amazon.com/images/M/MV5BMTcwOTExNzU5N15BMl5BanBnXkFtZTcwMzAxNTA4NA@@._V1_SX300.jpg', desc: 'Five students meet in detention and form a rock band to stand up for their beliefs.', rating: '6.9/10', genre: 'Musical, Drama', year: '2011', watch: 'https://www.youtube.com/watch?v=wvzzf4kBBhA', wiki: 'Lemonade_Mouth'},
+        {title: 'The Cheetah Girls', poster: 'https://m.media-amazon.com/images/M/MV5BMTU5MDUwNjI2MV5BMl5BanBnXkFtZTYwNzU4NDQ3._V1_SX300.jpg', desc: 'Four NYC girls pursue their dreams of becoming singing superstars.', rating: '4.9/10', genre: 'Musical, Comedy', year: '2003', watch: 'https://www.youtube.com/watch?v=RXt_lrama4w', wiki: 'The_Cheetah_Girls_(film)'},
+        {title: 'Descendants', poster: 'https://m.media-amazon.com/images/M/MV5BMjEyNjUyMTM4Ml5BMl5BanBnXkFtZTgwNDY2Nzk3NTE@._V1_SX300.jpg', desc: 'Teenage children of Disney villains are given a chance to prove they can be good.', rating: '6.3/10', genre: 'Musical, Fantasy', year: '2015', watch: 'https://www.youtube.com/watch?v=rKn7NYp11vo', wiki: 'Descendants_(2015_film)'},
+        {title: 'Zombies', poster: 'https://m.media-amazon.com/images/M/MV5BZmI0YjJjNjItYjI3Yi00YmRkLTg1YjItMjcyYTI5YzA5ZjllXkEyXkFqcGdeQXVyMTQ3Mzk2MDg@._V1_SX300.jpg', desc: 'Students from Zombietown transfer to a suburban high school.', rating: '6.0/10', genre: 'Musical, Comedy', year: '2018', watch: 'https://www.youtube.com/watch?v=wuvh3ZXChTY', wiki: 'Zombies_(2018_film)'}
     ],
 
     classic: [
-        {title: 'The Lion King', poster: 'https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg', desc: 'Lion prince Simba must find his way back home to reclaim his rightful place as king after a tragic event.', rating: '8.5/10', genre: 'Animation, Adventure', year: '1994', watch: 'https://www.youtube.com/watch?v=4CbLXeGSDxg', wiki: 'The_Lion_King'},
-        {title: 'Aladdin', poster: 'https://image.tmdb.org/t/p/w500/fo4olh7toQfXz22CSYqHkMT4l3E.jpg', desc: 'A street urchin finds a magical lamp and uses it to win over the princess he loves.', rating: '8.0/10', genre: 'Animation, Adventure', year: '1992', watch: 'https://www.youtube.com/watch?v=foyLmJRzBGw', wiki: 'Aladdin_(1992_Disney_film)'},
-        {title: 'Beauty and the Beast', poster: 'https://image.tmdb.org/t/p/w500/tnmL0g604PDRJwO3j5gPMuLen94.jpg', desc: 'A beautiful young woman takes her father\'s place as prisoner in a beast\'s castle.', rating: '8.0/10', genre: 'Animation, Romance', year: '1991', watch: 'https://www.youtube.com/watch?v=t5C0q50redA', wiki: 'Beauty_and_the_Beast_(1991_film)'},
-        {title: 'Cinderella', poster: 'https://image.tmdb.org/t/p/w500/Agx7xEXYajFmHhgGkS3mZ9S2gwD.jpg', desc: 'When her cruel stepmother prevents her from attending the Royal Ball, Cinderella gets unexpected help.', rating: '7.3/10', genre: 'Animation, Fantasy', year: '1950', watch: 'https://www.youtube.com/watch?v=2VW4mUOSZ5I', wiki: 'Cinderella_(1950_film)'},
-        {title: 'The Little Mermaid', poster: 'https://image.tmdb.org/t/p/w500/plcTihs5iAurCsU9edk4hp3Oq0z.jpg', desc: 'A mermaid princess makes a bargain to become human and win the love of a prince.', rating: '7.6/10', genre: 'Animation, Musical', year: '1989', watch: 'https://www.youtube.com/watch?v=kpGo2_d3oYE', wiki: 'The_Little_Mermaid_(1989_film)'},
-        {title: 'Mulan', poster: 'https://image.tmdb.org/t/p/w500/ifdLXnQ0Ap2Qd2VYhNULm6bzSZQ.jpg', desc: 'A fearless young woman disguises herself as a man to battle invaders in China.', rating: '7.6/10', genre: 'Animation, Action', year: '1998', watch: 'https://www.youtube.com/watch?v=KK8FHdFluOQ', wiki: 'Mulan_(1998_film)'}
+        {title: 'The Lion King', poster: 'https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg', desc: 'Lion prince Simba must find his way back home to reclaim his rightful place as king after a tragic event.', rating: '8.5/10', genre: 'Animation, Adventure', year: '1994', watch: 'https://www.youtube.com/watch?v=4CbLXeGSDxg', wiki: 'The_Lion_King'},
+        {title: 'Aladdin', poster: 'https://m.media-amazon.com/images/M/MV5BY2Q2NDI1MjUtM2Q5ZS00MTFlLWJiYWEtNTZmNjQ3OGJkZDgxXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg', desc: 'A street urchin finds a magical lamp and uses it to win over the princess he loves.', rating: '8.0/10', genre: 'Animation, Adventure', year: '1992', watch: 'https://www.youtube.com/watch?v=foyLmJRzBGw', wiki: 'Aladdin_(1992_Disney_film)'},
+        {title: 'Beauty and the Beast', poster: 'https://m.media-amazon.com/images/M/MV5BMzE5MDM1NDktY2I0OC00YWI5LTk2NzUtYjczNDczOWQxYjM0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg', desc: 'A beautiful young woman takes her father\'s place as prisoner in a beast\'s castle.', rating: '8.0/10', genre: 'Animation, Romance', year: '1991', watch: 'https://www.youtube.com/watch?v=t5C0q50redA', wiki: 'Beauty_and_the_Beast_(1991_film)'},
+        {title: 'Cinderella', poster: 'https://m.media-amazon.com/images/M/MV5BMTAxNjY3NzU1NDNeQTJeQWpwZ15BbWU4MDA1NTk4MjEx._V1_SX300.jpg', desc: 'When her cruel stepmother prevents her from attending the Royal Ball, Cinderella gets unexpected help.', rating: '7.3/10', genre: 'Animation, Fantasy', year: '1950', watch: 'https://www.youtube.com/watch?v=2VW4mUOSZ5I', wiki: 'Cinderella_(1950_film)'},
+        {title: 'The Little Mermaid', poster: 'https://m.media-amazon.com/images/M/MV5BYTQyNjU0NDUtNzgxZC00MGI4LWJhYTQtMDNmMWE4YTgxNmUxXkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_SX300.jpg', desc: 'A mermaid princess makes a bargain to become human and win the love of a prince.', rating: '7.6/10', genre: 'Animation, Musical', year: '1989', watch: 'https://www.youtube.com/watch?v=kpGo2_d3oYE', wiki: 'The_Little_Mermaid_(1989_film)'},
+        {title: 'Mulan', poster: 'https://m.media-amazon.com/images/M/MV5BODkxNGQ1NWYtNzg0Ny00Yjg3LThmZTItMjE2YjhmZTQ0ODY5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg', desc: 'A fearless young woman disguises herself as a man to battle invaders in China.', rating: '7.6/10', genre: 'Animation, Action', year: '1998', watch: 'https://www.youtube.com/watch?v=KK8FHdFluOQ', wiki: 'Mulan_(1998_film)'}
     ],
 
     allMovies: [
-        {title: 'Toy Story', poster: 'https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg', desc: 'A cowboy doll is threatened when a new spaceman action figure supplants him as top toy.', rating: '8.3/10', genre: 'Animation, Adventure', year: '1995', watch: 'https://www.youtube.com/watch?v=v-PjgYDrg70', wiki: 'Toy_Story'},
-        {title: 'Finding Nemo', poster: 'https://image.tmdb.org/t/p/w500/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg', desc: 'A clownfish searches for his son who was taken by divers.', rating: '8.1/10', genre: 'Animation, Adventure', year: '2003', watch: 'https://www.youtube.com/watch?v=wZdpNglLbt8', wiki: 'Finding_Nemo'},
-        {title: 'Up', poster: 'https://image.tmdb.org/t/p/w500/vpbaYVA8INpQHcmbfWmQqil9Bv8.jpg', desc: 'An elderly man ties balloons to his house and flies to South America.', rating: '8.2/10', genre: 'Animation, Adventure', year: '2009', watch: 'https://www.youtube.com/watch?v=ORFWdXl_zJ4', wiki: 'Up_(2009_film)'},
-        {title: 'Inside Out', poster: 'https://image.tmdb.org/t/p/w500/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg', desc: 'The emotions inside a young girl\'s mind help her navigate a difficult move.', rating: '8.1/10', genre: 'Animation, Drama', year: '2015', watch: 'https://www.youtube.com/watch?v=yRUAzGQ3nSY', wiki: 'Inside_Out_(2015_film)'},
-        {title: 'Coco', poster: 'https://image.tmdb.org/t/p/w500/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg', desc: 'A boy aspiring to become a musician enters the Land of the Dead.', rating: '8.4/10', genre: 'Animation, Musical', year: '2017', watch: 'https://www.youtube.com/watch?v=Rvr68u6k5sI', wiki: 'Coco_(2017_film)'},
-        {title: 'Brave', poster: 'https://image.tmdb.org/t/p/w500/gs24Fz4MqcA6idZVTeZpQZTQ91C.jpg', desc: 'A Scottish princess defies tradition and inadvertently unleashes chaos.', rating: '7.1/10', genre: 'Animation, Adventure', year: '2012', watch: 'https://www.youtube.com/watch?v=TEHWDA_6e3M', wiki: 'Brave_(2012_film)'},
-        {title: 'Tangled', poster: 'https://image.tmdb.org/t/p/w500/yNloEktlqx3YTFvUlt9SLkWX5Rs.jpg', desc: 'A princess with magical hair escapes her tower with a thief.', rating: '7.7/10', genre: 'Animation, Musical', year: '2010', watch: 'https://www.youtube.com/watch?v=Zkr3pEPf09Q', wiki: 'Tangled'},
-        {title: 'Zootopia', poster: 'https://image.tmdb.org/t/p/w500/hlK0e0wAQ3VLuJcsfIYPvb4JVud.jpg', desc: 'A rabbit cop and a fox team up to uncover a conspiracy.', rating: '8.0/10', genre: 'Animation, Comedy', year: '2016', watch: 'https://www.youtube.com/watch?v=jWM0ct-OLsM', wiki: 'Zootopia'},
-        {title: 'Big Hero 6', poster: 'https://image.tmdb.org/t/p/w500/4YxUbE0P67bGQbR2YVEZVbvj5JQ.jpg', desc: 'A robotics prodigy forms a superhero team to combat a villain.', rating: '7.8/10', genre: 'Animation, Action', year: '2014', watch: 'https://www.youtube.com/watch?v=z3biFxZIJOQ', wiki: 'Big_Hero_6_(film)'},
-        {title: 'Wreck-It Ralph', poster: 'https://image.tmdb.org/t/p/w500/5D8l9F6q2ry3IQFyaFkvOaZq8zQ.jpg', desc: 'A video game villain wants to be a hero and sets off on a journey.', rating: '7.7/10', genre: 'Animation, Comedy', year: '2012', watch: 'https://www.youtube.com/watch?v=87E6N7ToCxs', wiki: 'Wreck-It_Ralph'}
+        {title: 'Toy Story', poster: 'https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg', desc: 'A cowboy doll is threatened when a new spaceman action figure supplants him as top toy.', rating: '8.3/10', genre: 'Animation, Adventure', year: '1995', watch: 'https://www.youtube.com/watch?v=v-PjgYDrg70', wiki: 'Toy_Story'},
+        {title: 'Finding Nemo', poster: 'https://m.media-amazon.com/images/M/MV5BZjMxYzBiNjUtZDliNC00MDAyLWFjNGMtOWViNWUzODI2M2U4XkEyXkFqcGdeQXVyNjE2MjQwNjc@._V1_SX300.jpg', desc: 'A clownfish searches for his son who was taken by divers.', rating: '8.1/10', genre: 'Animation, Adventure', year: '2003', watch: 'https://www.youtube.com/watch?v=wZdpNglLbt8', wiki: 'Finding_Nemo'},
+        {title: 'Up', poster: 'https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_SX300.jpg', desc: 'An elderly man ties balloons to his house and flies to South America.', rating: '8.2/10', genre: 'Animation, Adventure', year: '2009', watch: 'https://www.youtube.com/watch?v=ORFWdXl_zJ4', wiki: 'Up_(2009_film)'},
+        {title: 'Inside Out', poster: 'https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SX300.jpg', desc: 'The emotions inside a young girl\'s mind help her navigate a difficult move.', rating: '8.1/10', genre: 'Animation, Drama', year: '2015', watch: 'https://www.youtube.com/watch?v=yRUAzGQ3nSY', wiki: 'Inside_Out_(2015_film)'},
+        {title: 'Coco', poster: 'https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_SX300.jpg', desc: 'A boy aspiring to become a musician enters the Land of the Dead.', rating: '8.4/10', genre: 'Animation, Musical', year: '2017', watch: 'https://www.youtube.com/watch?v=Rvr68u6k5sI', wiki: 'Coco_(2017_film)'},
+        {title: 'Brave', poster: 'https://m.media-amazon.com/images/M/MV5BMzgwODk3ODA1NF5BMl5BanBnXkFtZTcwNjU3NjQ0Nw@@._V1_SX300.jpg', desc: 'A Scottish princess defies tradition and inadvertently unleashes chaos.', rating: '7.1/10', genre: 'Animation, Adventure', year: '2012', watch: 'https://www.youtube.com/watch?v=TEHWDA_6e3M', wiki: 'Brave_(2012_film)'},
+        {title: 'Tangled', poster: 'https://m.media-amazon.com/images/M/MV5BMTAxNDYxMjg0MjNeQTJeQWpwZ15BbWU3MDcyNTk2OTM@._V1_SX300.jpg', desc: 'A princess with magical hair escapes her tower with a thief.', rating: '7.7/10', genre: 'Animation, Musical', year: '2010', watch: 'https://www.youtube.com/watch?v=Zkr3pEPf09Q', wiki: 'Tangled'},
+        {title: 'Zootopia', poster: 'https://m.media-amazon.com/images/M/MV5BOTMyMjEyNzIzMV5BMl5BanBnXkFtZTgwNzIyNjU0NzE@._V1_SX300.jpg', desc: 'A rabbit cop and a fox team up to uncover a conspiracy.', rating: '8.0/10', genre: 'Animation, Comedy', year: '2016', watch: 'https://www.youtube.com/watch?v=jWM0ct-OLsM', wiki: 'Zootopia'},
+        {title: 'Big Hero 6', poster: 'https://m.media-amazon.com/images/M/MV5BMDliOTIzNmUtOTllOC00NDU3LWFiNjYtMGM0NDc1YTMxNjYxXkEyXkFqcGdeQXVyNTM3NzExMDQ@._V1_SX300.jpg', desc: 'A robotics prodigy forms a superhero team to combat a villain.', rating: '7.8/10', genre: 'Animation, Action', year: '2014', watch: 'https://www.youtube.com/watch?v=z3biFxZIJOQ', wiki: 'Big_Hero_6_(film)'},
+        {title: 'Wreck-It Ralph', poster: 'https://m.media-amazon.com/images/M/MV5BNjI0NTU2Nzc2Ml5BMl5BanBnXkFtZTcwODA2MzEyOA@@._V1_SX300.jpg', desc: 'A video game villain wants to be a hero and sets off on a journey.', rating: '7.7/10', genre: 'Animation, Comedy', year: '2012', watch: 'https://www.youtube.com/watch?v=87E6N7ToCxs', wiki: 'Wreck-It_Ralph'}
     ],
 
     allSeries: [
-        {title: 'The Mandalorian', poster: 'https://image.tmdb.org/t/p/w500/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg', desc: 'A lone bounty hunter makes his way through the galaxy.', rating: '8.7/10', genre: 'Sci-Fi, Action', year: '2019', watch: 'https://www.youtube.com/watch?v=aOC8E8z_ifw', wiki: 'The_Mandalorian'},
-        {title: 'WandaVision', poster: 'https://image.tmdb.org/t/p/w500/glKDfE6btIRcVB5zrjspRIs4r52.jpg', desc: 'Wanda and Vision live in suburban bliss until they suspect things are not as they seem.', rating: '7.9/10', genre: 'Superhero, Drama', year: '2021', watch: 'https://www.youtube.com/watch?v=sj9J2ecsSpo', wiki: 'WandaVision'},
-        {title: 'Loki', poster: 'https://image.tmdb.org/t/p/w500/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg', desc: 'The mercurial villain Loki resumes his role as the God of Mischief.', rating: '8.2/10', genre: 'Superhero, Fantasy', year: '2021', watch: 'https://www.youtube.com/watch?v=nW948Va-l10', wiki: 'Loki_(TV_series)'},
-        {title: 'The Falcon and the Winter Soldier', poster: 'https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg', desc: 'Sam Wilson and Bucky Barnes team up for a global adventure.', rating: '7.2/10', genre: 'Superhero, Action', year: '2021', watch: 'https://www.youtube.com/watch?v=IWBsDaFWyTE', wiki: 'The_Falcon_and_the_Winter_Soldier'},
-        {title: 'Hawkeye', poster: 'https://image.tmdb.org/t/p/w500/ct5jQe7YjDnpQmvxFfFqN3KbFiR.jpg', desc: 'Clint Barton teams up with Kate Bishop for a post-Avengers mission.', rating: '7.5/10', genre: 'Superhero, Action', year: '2021', watch: 'https://www.youtube.com/watch?v=5VYb3B1ETZg', wiki: 'Hawkeye_(miniseries)'},
-        {title: 'Moon Knight', poster: 'https://image.tmdb.org/t/p/w500/9WlJFhOSCPnaaSmsrv0B6QCbn9H.jpg', desc: 'A former mercenary with multiple personalities becomes the avatar of an Egyptian god.', rating: '7.4/10', genre: 'Superhero, Fantasy', year: '2022', watch: 'https://www.youtube.com/watch?v=x7Krla_UxRg', wiki: 'Moon_Knight_(miniseries)'},
-        {title: 'Ms. Marvel', poster: 'https://image.tmdb.org/t/p/w500/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg', desc: 'A Muslim American teenager gains superpowers.', rating: '6.3/10', genre: 'Superhero, Comedy', year: '2022', watch: 'https://www.youtube.com/watch?v=m9EX0f6V11Y', wiki: 'Ms._Marvel_(miniseries)'},
-        {title: 'She-Hulk', poster: 'https://image.tmdb.org/t/p/w500/hJfI6AGrmr4uSHRccfJuSsapvOb.jpg', desc: 'A lawyer gains Hulk-like powers and navigates her new double life.', rating: '5.5/10', genre: 'Superhero, Comedy', year: '2022', watch: 'https://www.youtube.com/watch?v=u7JsKhI2An0', wiki: 'She-Hulk:_Attorney_at_Law'},
-        {title: 'Andor', poster: 'https://image.tmdb.org/t/p/w500/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg', desc: 'The story of Cassian Andor before the events of Rogue One.', rating: '8.4/10', genre: 'Sci-Fi, Thriller', year: '2022', watch: 'https://www.youtube.com/watch?v=cKOegEuCcfw', wiki: 'Andor_(TV_series)'},
-        {title: 'Obi-Wan Kenobi', poster: 'https://image.tmdb.org/t/p/w500/1hUTqIfCfJgQZ4t8vY2tYZGpYHF.jpg', desc: 'Obi-Wan Kenobi faces his greatest defeat: the fall of his best friend.', rating: '7.0/10', genre: 'Sci-Fi, Adventure', year: '2022', watch: 'https://www.youtube.com/watch?v=TWTfhyvzTx0', wiki: 'Obi-Wan_Kenobi_(TV_series)'}
+        {title: 'The Mandalorian', poster: 'https://m.media-amazon.com/images/M/MV5BN2M5YWFjN2YtYzU2YS00NzBlLTgwZWUtYWQzNWFhNDkyYjg3XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg', desc: 'A lone bounty hunter makes his way through the galaxy.', rating: '8.7/10', genre: 'Sci-Fi, Action', year: '2019', watch: 'https://www.youtube.com/watch?v=aOC8E8z_ifw', wiki: 'The_Mandalorian'},
+        {title: 'WandaVision', poster: 'https://m.media-amazon.com/images/M/MV5BZGEwYmMwZmMtMTQ3MS00YWNhLWEwMjItY2FjM2ZiYTg2NWMxXkEyXkFqcGdeQXVyMTI5MzA5MjA1._V1_SX300.jpg', desc: 'Wanda and Vision live in suburban bliss until they suspect things are not as they seem.', rating: '7.9/10', genre: 'Superhero, Drama', year: '2021', watch: 'https://www.youtube.com/watch?v=sj9J2ecsSpo', wiki: 'WandaVision'},
+        {title: 'Loki', poster: 'https://m.media-amazon.com/images/M/MV5BYjQ0ZWJkYjMtYjJmOS00MmMzLTlmNDYtNTljYjk0MWEzNGEyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg', desc: 'The mercurial villain Loki resumes his role as the God of Mischief.', rating: '8.2/10', genre: 'Superhero, Fantasy', year: '2021', watch: 'https://www.youtube.com/watch?v=nW948Va-l10', wiki: 'Loki_(TV_series)'},
+        {title: 'The Falcon and the Winter Soldier', poster: 'https://m.media-amazon.com/images/M/MV5BODNiODVmYjItM2MyMC00ZWQyLTgyMGYtNzJjMmVhZDU2MmI0XkEyXkFqcGdeQXVyNzk3NDUzNTc@._V1_SX300.jpg', desc: 'Sam Wilson and Bucky Barnes team up for a global adventure.', rating: '7.2/10', genre: 'Superhero, Action', year: '2021', watch: 'https://www.youtube.com/watch?v=IWBsDaFWyTE', wiki: 'The_Falcon_and_the_Winter_Soldier'},
+        {title: 'Hawkeye', poster: 'https://m.media-amazon.com/images/M/MV5BZWFiZWQxMWItNzRmZC00ZjRiLWI3ODgtZjJkMzJjNjRhMjRmXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_SX300.jpg', desc: 'Clint Barton teams up with Kate Bishop for a post-Avengers mission.', rating: '7.5/10', genre: 'Superhero, Action', year: '2021', watch: 'https://www.youtube.com/watch?v=5VYb3B1ETZg', wiki: 'Hawkeye_(miniseries)'},
+        {title: 'Moon Knight', poster: 'https://m.media-amazon.com/images/M/MV5BYTc5OWNhYjktMThlOS00ODUxLTgwNDQtZjdjYjkyM2IwZTZlXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_SX300.jpg', desc: 'A former mercenary with multiple personalities becomes the avatar of an Egyptian god.', rating: '7.4/10', genre: 'Superhero, Fantasy', year: '2022', watch: 'https://www.youtube.com/watch?v=x7Krla_UxRg', wiki: 'Moon_Knight_(miniseries)'},
+        {title: 'Ms. Marvel', poster: 'https://m.media-amazon.com/images/M/MV5BMTQxMjY5MjUtZjE4OS00OWZkLWFiYzMtODk0Nzk0OTczNzgxXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_SX300.jpg', desc: 'A Muslim American teenager gains superpowers.', rating: '6.3/10', genre: 'Superhero, Comedy', year: '2022', watch: 'https://www.youtube.com/watch?v=m9EX0f6V11Y', wiki: 'Ms._Marvel_(miniseries)'},
+        {title: 'She-Hulk', poster: 'https://m.media-amazon.com/images/M/MV5BYjQwYTdjZGMtOGNkZi00MTkyLWE4YjQtZjdmMmQ4YWFlZTNjXkEyXkFqcGdeQXVyMTEyNzgwMDUw._V1_SX300.jpg', desc: 'A lawyer gains Hulk-like powers and navigates her new double life.', rating: '5.5/10', genre: 'Superhero, Comedy', year: '2022', watch: 'https://www.youtube.com/watch?v=u7JsKhI2An0', wiki: 'She-Hulk:_Attorney_at_Law'},
+        {title: 'Andor', poster: 'https://m.media-amazon.com/images/M/MV5BNjU5MTg4MzAtZmQ3Ny00M2YwLWE2NDctYzU3YjJkNDk2NmU5XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg', desc: 'The story of Cassian Andor before the events of Rogue One.', rating: '8.4/10', genre: 'Sci-Fi, Thriller', year: '2022', watch: 'https://www.youtube.com/watch?v=cKOegEuCcfw', wiki: 'Andor_(TV_series)'},
+        {title: 'Obi-Wan Kenobi', poster: 'https://m.media-amazon.com/images/M/MV5BN2Y0NjZjMTktMWY4Ny00ODIzLWI5MzctMzAwZjljZmU0NmY1XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg', desc: 'Obi-Wan Kenobi faces his greatest defeat: the fall of his best friend.', rating: '7.0/10', genre: 'Sci-Fi, Adventure', year: '2022', watch: 'https://www.youtube.com/watch?v=TWTfhyvzTx0', wiki: 'Obi-Wan_Kenobi_(TV_series)'}
     ]
 };
 
@@ -1015,7 +1346,6 @@
             document.getElementById('popup-watch').href = movie.watch;
             document.getElementById('popup-wiki').href = 'https://en.wikipedia.org/wiki/' + movie.wiki;
             
-            // Update add to list button
             const inList = myList.some(m => m.title === movie.title);
             const addListBtn = document.getElementById('popup-addlist');
             const listIcon = document.getElementById('list-icon');
@@ -1058,13 +1388,9 @@
                 addListBtn.classList.add('in-list');
                 listIcon.textContent = '−';
                 listText.textContent = 'Remove from My List';
-                
-                // Show success notification
                 showNotification('Added to Watchlist', 'success');
             }
             
-            // Refresh watchlist if it's the active page
-            const watchlistGrid = document.getElementById('watchlist-grid');
             if (document.getElementById('watchlist-page').classList.contains('active')) {
                 populateWatchlist();
             }
@@ -1073,7 +1399,6 @@
         function removeFromList(title) {
             myList = myList.filter(m => m.title !== title);
             
-            // Update popup if it's open
             if (currentMovie && currentMovie.title === title) {
                 const addListBtn = document.getElementById('popup-addlist');
                 const listIcon = document.getElementById('list-icon');
@@ -1083,7 +1408,6 @@
                 listText.textContent = 'Add to My List';
             }
             
-            // Refresh watchlist if it's the active page
             if (document.getElementById('watchlist-page').classList.contains('active')) {
                 populateWatchlist();
             }
@@ -1092,7 +1416,6 @@
         function removeFromWatchlistPage(title) {
             myList = myList.filter(m => m.title !== title);
             
-            // Update popup if it's open
             if (currentMovie && currentMovie.title === title) {
                 const addListBtn = document.getElementById('popup-addlist');
                 const listIcon = document.getElementById('list-icon');
@@ -1102,10 +1425,7 @@
                 listText.textContent = 'Add to My List';
             }
             
-            // Show remove notification
             showNotification('Removed from Watchlist', 'remove');
-            
-            // Refresh watchlist
             populateWatchlist();
         }
 
@@ -1114,10 +1434,8 @@
             const icon = document.getElementById('notif-icon');
             const text = document.getElementById('notif-text');
             
-            // Set content
             text.textContent = message;
             
-            // Set icon and style based on type
             if (type === 'success') {
                 icon.textContent = '✓';
                 notif.className = 'notification success show';
@@ -1126,11 +1444,83 @@
                 notif.className = 'notification remove show';
             }
             
-            // Auto hide after 3 seconds
             setTimeout(() => {
                 notif.classList.remove('show');
             }, 3000);
         }
+
+        // Search functionality
+        let allContent = [];
+
+        function initializeSearch() {
+            allContent = [
+                ...moviesData.recommended,
+                ...moviesData.watched,
+                ...moviesData.classic,
+                ...moviesData.allMovies,
+                ...moviesData.allSeries
+            ];
+            allContent = allContent.filter((item, index, self) =>
+                index === self.findIndex((t) => t.title === item.title)
+            );
+        }
+
+        initializeSearch();
+
+        function toggleSearch() {
+            const searchBar = document.getElementById('searchInput');
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchBar.focus();
+            } else {
+                searchBar.value = '';
+                closeSearch();
+            }
+        }
+
+        function closeSearch() {
+            document.getElementById('searchResults').classList.remove('active');
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (query.length === 0) {
+                resultsContainer.classList.remove('active');
+                return;
+            }
+            
+            const results = allContent.filter(item => 
+                item.title.toLowerCase().includes(query) ||
+                item.desc.toLowerCase().includes(query) ||
+                item.genre.toLowerCase().includes(query)
+            );
+            
+            if (results.length > 0) {
+                resultsContainer.innerHTML = results.slice(0, 8).map(item => `
+                    <div class="search-result-item" onclick='openPopup(${JSON.stringify(item).replace(/'/g, "&apos;")}); closeSearch();'>
+                        <img src="${item.poster}" alt="${item.title}" class="search-result-poster" onerror="this.src='https://via.placeholder.com/60x90?text=${item.title}'">
+                        <div class="search-result-info">
+                            <div class="search-result-title">${item.title}</div>
+                            <div class="search-result-meta">${item.year} • ${item.genre} • ${item.rating}</div>
+                            <div class="search-result-desc">${item.desc}</div>
+                        </div>
+                    </div>
+                `).join('');
+                resultsContainer.classList.add('active');
+            } else {
+                resultsContainer.innerHTML = '<div class="no-results">No results found for "' + query + '"</div>';
+                resultsContainer.classList.add('active');
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            const searchContainer = document.querySelector('.search-container');
+            if (!searchContainer.contains(e.target)) {
+                closeSearch();
+            }
+        });
 
         // Pause/play videos on hover
         document.querySelectorAll('.category-card').forEach(card => {
@@ -1145,7 +1535,10 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closePopup();
+            if (e.key === 'Escape') {
+                closePopup();
+                closeSearch();
+            }
         });
     </script>
 </body>
